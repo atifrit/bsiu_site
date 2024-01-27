@@ -4,4 +4,3 @@ __pycache__/
 .venv
 .DS_Store
 .vscode/
-/home/atifrit/aa-projects/websites/bsiu_site/app/seeds/users.py
