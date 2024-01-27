@@ -4,9 +4,6 @@ from sqlalchemy.sql import text
 
 # Adds a demo user, you can add other users here if you want
 def seed_users():
-    demo = User(username='demo', email='demo@gmail.com', password='8C0??.7Bi;£C')
-
-    db.session.add(demo)
 
     db.session.commit()
 
