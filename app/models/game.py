@@ -11,7 +11,7 @@ class Game(db.Model):
     name = db.Column(db.String, nullable=False)
     image = db.Column(db.String, nullable=False)
     category = db.Column(db.String, nullable=False)
-    order = db.Column(db.Integer)
+    order = db.Column(db.String)
     notes = db.Column(db.String, nullable=False)
     last_edited = db.Column(db.Date, default=datetime.now())
     created_at = db.Column(db.Date, default=datetime.now())

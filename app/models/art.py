@@ -13,7 +13,7 @@ class Art(db.Model):
     caption = db.Column(db.String, nullable=False)
     year = db.Column(db.Integer, nullable=False)
     category = db.Column(db.String, nullable=False)
-    order = db.Column(db.Integer)
+    order = db.Column(db.String)
     notes = db.Column(db.String, nullable=False)
     last_edited = db.Column(db.Date, default=datetime.now())
     created_at = db.Column(db.Date, default=datetime.now())
