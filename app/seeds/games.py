@@ -4,9 +4,9 @@ from sqlalchemy.sql import text
 
 def seed_games():
 
-    game1 = Game(name='game1', image='something', category='old', order='l', notes='world')
-    game2 = Game(name='game2', image='something2', category='old2', order='z', notes='world2')
-    game3 = Game(name='game3', image='something3', category='old3', order='lz', notes='world3')
+    game1 = Game(name='game1', image='something', category='old', order=0, notes='world')
+    game2 = Game(name='game2', image='something2', category='old2', order=1024, notes='world2')
+    game3 = Game(name='game3', image='something3', category='old3', order=2048, notes='world3')
 
     db.session.add(game1)
     db.session.add(game2)

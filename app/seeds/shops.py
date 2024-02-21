@@ -4,9 +4,9 @@ from sqlalchemy.sql import text
 
 def seed_shops():
 
-    shop1 = Shop(name='shop1', image='something', caption='hello', price=5, category='old', order='l', notes='world')
-    shop2 = Shop(name='shop2', image='something2', caption='hello2', price=10, category='old2', order='z', notes='world2')
-    shop3 = Shop(name='shop3', image='something3', caption='hello3', price=15, category='old3', order='lz', notes='world3')
+    shop1 = Shop(name='shop1', image='something', caption='hello', price=5, category='old', order=0, notes='world')
+    shop2 = Shop(name='shop2', image='something2', caption='hello2', price=10, category='old2', order=1024, notes='world2')
+    shop3 = Shop(name='shop3', image='something3', caption='hello3', price=15, category='old3', order=2048, notes='world3')
 
     db.session.add(shop1)
     db.session.add(shop2)
