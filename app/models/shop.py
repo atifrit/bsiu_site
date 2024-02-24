@@ -8,10 +8,10 @@ class Shop(db.Model):
         __table_args__ = {'schema': SCHEMA}
 
     id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String, nullable=False)
+    name = db.Column(db.String)
     image = db.Column(db.String, nullable=False)
-    caption = db.Column(db.String, nullable=False)
-    price = db.Column(db.Float, nullable=False)
+    caption = db.Column(db.String)
+    price = db.Column(db.Float)
     category = db.Column(db.String, nullable=False)
     order = db.Column(db.Float)
     notes = db.Column(db.String)
