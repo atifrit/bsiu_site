@@ -7,6 +7,7 @@ import { authenticate } from "./store/session";
 import Navigation from "./components/Navigation";
 import LandingPage from "./components/LandingPage";
 import GamesPage from './components/GamesPage';
+import Art from "./components/Art";
 
 function App() {
   const dispatch = useDispatch();
@@ -29,8 +30,8 @@ function App() {
           <Route exact path='/'>
             <LandingPage />
           </Route>
-          <Route path='/games'>
-            <GamesPage />
+          <Route exact path='/art'>
+            <Art />
           </Route>
         </Switch>
       )}

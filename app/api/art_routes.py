@@ -15,6 +15,7 @@ art_routes = Blueprint('art', __name__)
 @art_routes.route('/', methods=['GET'])
 def get_all_art():
     arts = Art.query.all()
+    print('arts:', arts)
 
     if arts:
         art_list = [
