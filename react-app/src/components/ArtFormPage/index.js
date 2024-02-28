@@ -26,4 +26,6 @@ const ArtFormPage = () => {
         }
     }, [dispatch, art])
 
+
+
 }
