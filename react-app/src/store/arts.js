@@ -17,15 +17,16 @@ export const getArt = () => async dispatch => {
 }
 
 
-const initialState = []
+const initialState = {artPieces:[], hydrated: false}
 
 const artReducer = (state = initialState, action) => {
     switch (action.type){
         case GET_ALL_ART:
-            return [
+            return {
                 ...state,
-                ...action.payload
-            ]
+                artPieces: action.payload,
+                hydrated: true
+            }
         default:
             return state;
     }

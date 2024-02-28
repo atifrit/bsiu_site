@@ -13,16 +13,14 @@ const Art = () => {
     const art = useSelector((state) => state.art)
 
     useEffect(() => {
-        if (art.length === 0) {
-            console.log(art)
+        if (art.hydrated === false) {
             dispatch(getArt());
         }
     }, [dispatch, art])
 
     return (
         <div>
-            hello
-            {art.map((piece) => {
+            {art.artPieces.map((piece) => {
                 return (
                     <div className='artBlock'>
                         <p> {piece.name}, {piece.year}, {piece.order} </p>

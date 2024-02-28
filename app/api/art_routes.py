@@ -14,7 +14,7 @@ art_routes = Blueprint('art', __name__)
 
 @art_routes.route('/', methods=['GET'])
 def get_all_art():
-    arts = Art.query.all()
+    arts = Art.query.order_by(Art.order).all()
     print('arts:', arts)
 
     if arts:
