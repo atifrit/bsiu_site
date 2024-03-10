@@ -45,11 +45,7 @@ def post_art():
     artForm['csrf_token'].data = request.cookies['csrf_token']
 
     if artForm.validate_on_submit():
-        artCount = Art.query.all().count()
-
-        orderNum = (artCount + 1)*1024
-
-        new_art = Art(name=artForm.data['name'], image=artForm.data['image'], caption=artForm.data['caption'], year=artForm.data['year'], category=artForm.data['category'], order=orderNum, notes=artForm.data['notes'])
+        new_art = Art(name=artForm.data['name'], image=artForm.data['image'], caption=artForm.data['caption'], year=artForm.data['year'], category=artForm.data['category'], order=artForm.data['order'], notes=artForm.data['notes'])
         db.session.add(new_art)
         db.session.commit()
         return ({'message': 'Art Added Successfully'})

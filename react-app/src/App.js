@@ -8,6 +8,7 @@ import Navigation from "./components/Navigation";
 import LandingPage from "./components/LandingPage";
 import GamesPage from './components/GamesPage';
 import Art from "./components/Art";
+import ArtFormPage from "./components/ArtFormPage";
 
 function App() {
   const dispatch = useDispatch();
@@ -32,6 +33,9 @@ function App() {
           </Route>
           <Route exact path='/art'>
             <Art />
+          </Route>
+          <Route exact path='/artformpage'>
+            <ArtFormPage />
           </Route>
         </Switch>
       )}

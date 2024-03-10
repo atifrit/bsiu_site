@@ -24,6 +24,7 @@ const Art = () => {
                 return (
                     <div className='artBlock'>
                         <p> {piece.name}, {piece.year}, {piece.order} </p>
+                        <img src={piece.image}></img>
                     </div>
                 )
             })}
