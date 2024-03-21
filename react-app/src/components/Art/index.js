@@ -5,6 +5,8 @@ import { Link, Redirect, useParams } from "react-router-dom/cjs/react-router-dom
 import { getArt } from "../../store/arts";
 
 import './Art.css';
+import OpenModalButton from "../OpenModalButton";
+import ArtUpdateModal from "../ArtUpdateModal";
 
 const Art = () => {
     const dispatch = useDispatch();
@@ -18,9 +20,41 @@ const Art = () => {
         }
     }, [dispatch, art])
 
+
+    const handleEdit = (e) => {
+
+    }
+
     return (
         <div>
             {art.artPieces.map((piece) => {
+                if (user) {
+                    return (
+                        <div className='artBlock'>
+                            <div className='modalButtonContainer'>
+
+                                <OpenModalButton
+                                    className='withdrawbutton'
+                                    buttonText="Edit Post"
+                                    modalComponent={
+                                        <ArtUpdateModal
+                                            id={piece.id}
+                                            name={piece.name}
+                                            image={piece.image}
+                                            caption={piece.caption}
+                                            year={piece.year}
+                                            category={piece.category}
+                                            order={piece.order}
+                                            notes={piece.notes}
+                                        />
+                                    }
+                                />
+                            </div>
+                            <p> {piece.name}, {piece.year}, {piece.order} </p>
+                            <img src={piece.image}></img>
+                        </div>
+                    )
+                }
                 return (
                     <div className='artBlock'>
                         <p> {piece.name}, {piece.year}, {piece.order} </p>

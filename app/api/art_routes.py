@@ -64,3 +64,26 @@ def delete_art(art_id):
     db.session.delete(art)
     db.session.commit()
     return jsonify({'message': 'successfully deleted'})
+
+@art_routes.route('/<int:art_id>', methods=['PUT'])
+@login_required
+def update_art(art_id):
+    artForm=ArtForm()
+    artForm['csrf_token'].data = request.cookies['csrf_token']
+
+
+    if artForm.validate_on_submit():
+        art = Art.query.get(art_id)
+        art.name = artForm.data['name']
+        art.image=artForm.data['image']
+        art.caption=artForm.data['caption']
+        art.year=artForm.data['year']
+        art.category=artForm.data['category']
+        art.order=artForm.data['order']
+        art.notes=artForm.data['notes']
+
+        db.session.commit()
+
+        return jsonify({'message': 'update successful'}), 201
+
+    return {'errors': 'failed to update'}, 401
