@@ -7,6 +7,7 @@ import { getArt } from "../../store/arts";
 import './Art.css';
 import OpenModalButton from "../OpenModalButton";
 import ArtUpdateModal from "../ArtUpdateModal";
+import DeleteArtModal from "../DeleteArtModal";
 
 const Art = () => {
     const dispatch = useDispatch();
@@ -21,9 +22,6 @@ const Art = () => {
     }, [dispatch, art])
 
 
-    const handleEdit = (e) => {
-
-    }
 
     return (
         <div>
@@ -46,6 +44,15 @@ const Art = () => {
                                             category={piece.category}
                                             order={piece.order}
                                             notes={piece.notes}
+                                        />
+                                    }
+                                />
+                                <OpenModalButton
+                                    className='withdrawbutton'
+                                    buttonText="Delete Post"
+                                    modalComponent={
+                                        <DeleteArtModal
+                                            id={piece.id}
                                         />
                                     }
                                 />
