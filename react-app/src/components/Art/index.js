@@ -21,16 +21,20 @@ const Art = () => {
         }
     }, [dispatch, art])
 
-    let side = 1;
+    let side = 0;
 
     return (
-        <div>
+        <div className='artContainer'>
             {art.artPieces.map((piece) => {
                 if (user) {
+                    side++;
                     return (
-                        <div className='artBlock'>
-                            <p> {piece.name}, {piece.year}, {piece.order} </p>
-                            <img src={piece.image}></img>
+                        <div className={side % 2 !== 0 ? 'artBlock left':'artBlock right'}>
+                        <img src={piece.image}></img>
+                        <h3 className='artName'>{piece.name}</h3>
+                        <h4 className='artCaption'>{piece.caption}</h4>
+                        <h4 className='artCaption'>{piece.year}</h4>
+                        <h4 className='artCaption'>Order Weight: {piece.order}</h4>
                             <div className='modalButtonContainer'>
 
                                 <OpenModalButton
@@ -62,10 +66,13 @@ const Art = () => {
                         </div>
                     )
                 }
+                side++;
                 return (
-                    <div className='artBlock'>
+                    <div className={side % 2 !== 0 ? 'artBlock left':'artBlock right'}>
                         <img src={piece.image}></img>
-                        <p> {piece.name}, {piece.year}, {piece.order} </p>
+                        <h3 className='artName'>{piece.name}</h3>
+                        <h4 className='artCaption'>{piece.caption}</h4>
+                        <h4 className='artCaption'>{piece.year}</h4>
                     </div>
                 )
             })}
