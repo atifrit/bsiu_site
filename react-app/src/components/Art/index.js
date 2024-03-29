@@ -21,7 +21,7 @@ const Art = () => {
         }
     }, [dispatch, art])
 
-
+    let side = 1;
 
     return (
         <div>
@@ -29,6 +29,8 @@ const Art = () => {
                 if (user) {
                     return (
                         <div className='artBlock'>
+                            <p> {piece.name}, {piece.year}, {piece.order} </p>
+                            <img src={piece.image}></img>
                             <div className='modalButtonContainer'>
 
                                 <OpenModalButton
@@ -57,15 +59,13 @@ const Art = () => {
                                     }
                                 />
                             </div>
-                            <p> {piece.name}, {piece.year}, {piece.order} </p>
-                            <img src={piece.image}></img>
                         </div>
                     )
                 }
                 return (
                     <div className='artBlock'>
-                        <p> {piece.name}, {piece.year}, {piece.order} </p>
                         <img src={piece.image}></img>
+                        <p> {piece.name}, {piece.year}, {piece.order} </p>
                     </div>
                 )
             })}

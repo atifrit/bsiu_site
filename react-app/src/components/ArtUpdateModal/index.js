@@ -123,6 +123,16 @@ export default function ArtUpdateModal(props) {
                         setNotes(e.target.value);
                     }}
                 />
+                <label className='displayText' htmlFor='order'>Order Weight:</label>
+                <input
+                    className="signupFormInput"
+                    type='number'
+                    name='order'
+                    value={order}
+                    onChange={(e) => {
+                        setOrder(e.target.value);
+                    }}
+                />
 
                 <button type='submit'>Update</button>
             </form>
