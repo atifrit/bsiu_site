@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useDispatch } from "react-redux";
+import { NavLink } from 'react-router-dom';
 import { logout } from "../../store/session";
 import OpenModalButton from "../OpenModalButton";
 import LoginFormModal from "../LoginFormModal";
@@ -39,20 +40,30 @@ function ProfileButton({ user }) {
 
   return (
     <>
-      <button onClick={openMenu}>
-        <i className="fas fa-user-circle" />
+      <button className='hamburgerButton' onClick={openMenu}>
+        <i className="fas fa-bars" />
       </button>
       <ul className={ulClassName} ref={ulRef}>
         {user ? (
           <>
             <li>{user.username}</li>
             <li>{user.email}</li>
-            <li>
+            <div>
               <button onClick={handleLogout}>Log Out</button>
-            </li>
+            </div>
+            <div><NavLink className='hamburgerLinks' exact to="/">Home</NavLink></div>
+            <div><NavLink className='hamburgerLinks' exact to="/art">Art</NavLink></div>
+            <div><NavLink className='hamburgerLinks' exact to="/games">Game Art</NavLink></div>
+            <div><NavLink className='hamburgerLinks' exact to="/shop">Shop</NavLink></div>
+            <div><NavLink className='hamburgerLinks' exact to="/artformpage">Post</NavLink></div>
+
           </>
         ) : (
           <>
+            <div><NavLink className='hamburgerLinks' exact to="/">Home</NavLink></div>
+            <div><NavLink className='hamburgerLinks' exact to="/art">Art</NavLink></div>
+            <div><NavLink className='hamburgerLinks' exact to="/games">Game Art</NavLink></div>
+            <div><NavLink className='hamburgerLinks' exact to="/shop">Shop</NavLink></div>
             <OpenModalButton
               buttonText="Log In"
               onItemClick={closeMenu}
