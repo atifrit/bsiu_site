@@ -1,10 +1,38 @@
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans');
 
+.leftImage {
+    margin-left: 30px;
+    margin-bottom: 30px;
+}
+
+.rightImage {
+    margin-right: 30px;
+    margin-bottom: 30px;
+}
+.artImage {
+    height:245px;
+}
 
 .artContainer {
+    width: 360px;
     display: flex;
     flex-direction: column;
 }
 
+.artBlock {
+    margin-top: 65px;
+    margin-bottom: 65px;
+
+}
+
+.artName{
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+.artCaption {
+    font-size: 13px;
+}
 
 .left {
     align-self: flex-start;

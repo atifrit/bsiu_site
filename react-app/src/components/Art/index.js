@@ -69,7 +69,7 @@ const Art = () => {
                 side++;
                 return (
                     <div className={side % 2 !== 0 ? 'artBlock left':'artBlock right'}>
-                        <img src={piece.image}></img>
+                        <img className={side % 2 !== 0 ? 'artImage leftImage' : 'artImage rightImage'} src={piece.image}></img>
                         <h3 className='artName'>{piece.name}</h3>
                         <h4 className='artCaption'>{piece.caption}</h4>
                         <h4 className='artCaption'>{piece.year}</h4>
