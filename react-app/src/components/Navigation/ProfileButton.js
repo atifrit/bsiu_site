@@ -64,11 +64,7 @@ function ProfileButton({ user }) {
             <div><NavLink className='hamburgerLinks' exact to="/art">Art</NavLink></div>
             <div><NavLink className='hamburgerLinks' exact to="/games">Game Art</NavLink></div>
             <div><NavLink className='hamburgerLinks' exact to="/shop">Shop</NavLink></div>
-            <OpenModalButton
-              buttonText="Log In"
-              onItemClick={closeMenu}
-              modalComponent={<LoginFormModal />}
-            />
+            <div><NavLink className='hamburgerLinks' exact to="/login">Login</NavLink></div>
 
             <OpenModalButton
               buttonText="Sign Up"

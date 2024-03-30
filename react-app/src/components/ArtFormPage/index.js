@@ -72,7 +72,7 @@ const ArtFormPage = () => {
 
     return (
         <div className='postArt'>
-            <form onSubmit={handleSubmit}>
+            <form className='artForm' onSubmit={handleSubmit}>
                 <label htmlFor="imageUpload">Image: </label>
                 <input
                 name='imageUpload'
@@ -84,13 +84,6 @@ const ArtFormPage = () => {
                     console.log(image);
                 }}
                 ></input>
-                <label htmlFor="caption">Caption: </label>
-                <input
-                name='caption'
-                type='text'
-                value={caption}
-                onChange={(e)=> setCaption(e.target.value)}
-                ></input>
                 <label htmlFor="name">Name: </label>
                 <input
                 name='name'
@@ -98,6 +91,13 @@ const ArtFormPage = () => {
                 value={name}
                 onChange={(e)=> setName(e.target.value)}
                 ></input>
+                <label htmlFor="caption">Caption: </label>
+                <textarea
+                name='caption'
+                className='captionText'
+                value={caption}
+                onChange={(e)=> setCaption(e.target.value)}
+                ></textarea>
                 <label htmlFor="year">Year: </label>
                 <input
                 name='year'
@@ -113,12 +113,12 @@ const ArtFormPage = () => {
                 onChange={(e)=> setCategory(e.target.value)}
                 ></input>
                 <label htmlFor="notes">Notes: </label>
-                <input
+                <textarea
                 name='notes'
-                type='text'
+                className='captionText'
                 value={notes}
                 onChange={(e)=> setNotes(e.target.value)}
-                ></input>
+                ></textarea>
 
                 <div className="buttonContainer">
                     <button className="submitButton" type='submit' disabled={!image || category.length < 4}>Post</button>

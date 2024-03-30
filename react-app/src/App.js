@@ -37,6 +37,9 @@ function App() {
           <Route exact path='/artformpage'>
             <ArtFormPage />
           </Route>
+          <Route exact path='/login'>
+          <LoginFormPage />
+          </Route>
         </Switch>
       )}
     </>
