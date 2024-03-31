@@ -1,3 +1,11 @@
+@font-face {
+  font-family: 'Aspekta-400';
+  src: local('Aspekta-400'), url(/home/atifrit/aa-projects/websites/aspekta/fonts/webfonts/Aspekta-400.woff2) format('woff2');
+  /* other formats include: 'woff2', 'truetype, 'opentype',
+                            'embedded-opentype', and 'svg' */
+}
+
+
 .profile-dropdown {
   position: absolute;
   top: 40px;
@@ -29,9 +37,9 @@
 
 .hamburgerLinks {
   margin-top: 10px;
+  font-family: 'Aspekta-400';
   font-size: 13px;
   text-decoration: none;
-  font-family: sans-serif;
   color: black;
 }
 
