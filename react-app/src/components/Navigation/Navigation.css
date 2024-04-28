@@ -24,9 +24,10 @@
 }
 
 .navContainer {
-  width: 360px;
+  width: 310px;
   display: flex;
   justify-content: flex-end;
+  margin-top: 25px;
 }
 
 .navbarContainer {
@@ -48,4 +49,8 @@
   height: 25px;
   background-color: white;
   border: none;
+}
+
+i {
+  font-size: 25px;
 }

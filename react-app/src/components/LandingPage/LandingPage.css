@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans');
+@font-face {
+    font-family: 'Aspekta-600';
+    src: local('Aspekta-600'), url(/home/atifrit/aa-projects/websites/aspekta/fonts/webfonts/Aspekta-600.woff2) format('woff2');
+    /* other formats include: 'woff2', 'truetype, 'opentype',
+                              'embedded-opentype', and 'svg' */
+  }
+@font-face {
+    font-family: 'Aspekta-400';
+    src: local('Aspekta-400'), url(/home/atifrit/aa-projects/websites/aspekta/fonts/webfonts/Aspekta-400.woff2) format('woff2');
+    /* other formats include: 'woff2', 'truetype, 'opentype',
+                              'embedded-opentype', and 'svg' */
+  }
+
+.landing-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.landing-links {
+    width: 310px;
+}
+
+.navLink {
+    margin-right: 10px;
+}
+
+.landingPageTitleText {
+    font-size: 18px;
+    font-family: 'Aspekta-600';
+    text-align: center;
+    margin-bottom: 0px;
+    margin-top: 80px;
+}
+.landingPageSubText {
+    font-size: 11px;
+    font-family: 'Aspekta-400';
+    text-align: center;
+    margin-top: 0px;
+    margin-bottom: 30px;
+}
+
+.shopcontact{
+    background-color: rgb(255, 213, 189);
+    width: 100px;
+    height: 100px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.shopcontactText {
+    color: black;
+    font-family: 'Aspekta-400';
+    margin: 0px;
+}
+
+.oddRow {
+    height: 100px;
+}
+.evenRow {
+    height: 100px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
