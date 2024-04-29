@@ -56,7 +56,9 @@ const LandingPage = () => {
                         </NavLink>
                         <NavLink to='/art'>
                             <div className='shopcontact'>
-                                <p className='shopcontactText'>shop+contact</p>
+                                <div className="shopcontacttextcontainer">
+                                    <p className='shopcontactText'>shop + contact</p>
+                                </div>
                             </div>
                         </NavLink>
                     </div>

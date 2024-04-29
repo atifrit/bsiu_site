@@ -24,7 +24,10 @@
 }
 
 .navContainer {
-  width: 310px;
+  width: 360px;
+  box-sizing: border-box;
+  margin-left: 25px;
+  margin-right: 25px;
   display: flex;
   justify-content: flex-end;
   margin-top: 25px;

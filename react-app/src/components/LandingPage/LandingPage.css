@@ -53,7 +53,10 @@
 .shopcontactText {
     color: black;
     font-family: 'Aspekta-400';
-    margin: 0px;
+    font-size: 12.5px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-top: 0px;
 }
 
 .oddRow {
@@ -63,4 +66,16 @@
     height: 100px;
     margin-top: 15px;
     margin-bottom: 15px;
+}
+
+.shopcontacttextcontainer {
+    display: flex;
+    height: 100px;
+    width: 60px;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+i {
+    text-align: center;
 }
