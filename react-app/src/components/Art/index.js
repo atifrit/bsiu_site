@@ -29,53 +29,58 @@ const Art = () => {
                 {art.artPieces.map((piece) => {
                     if (user) {
                         side++;
+                        if(piece.category === 'abstract') {
+                            return (
+                                <div className={side % 2 !== 0 ? 'artBlock left' : 'artBlock right'}>
+                                    <img className={side % 2 !== 0 ? 'artImage leftImage' : 'artImage rightImage'} src={piece.image}></img>
+                                    <h3 className={side % 2 !== 0 ? 'artName leftName' : 'artName'}>{piece.name}</h3>
+                                    <h4 className={side % 2 !== 0 ? 'artCaption leftName' : 'artCaption'}>{piece.caption}</h4>
+                                    <h4 className={side % 2 !== 0 ? 'artCaption leftName' : 'artCaption'}>{piece.year}</h4>
+                                    <h4 className={side % 2 !== 0 ? 'artCaption leftName' : 'artCaption'}>Order Weight: {piece.order}</h4>
+                                    <div className={side % 2 !== 0 ? 'modalButtonContainer leftName' : 'modalButtonContainer'}>
+
+                                        <OpenModalButton
+                                            className='withdrawbutton'
+                                            buttonText="Edit Post"
+                                            modalComponent={
+                                                <ArtUpdateModal
+                                                    id={piece.id}
+                                                    name={piece.name}
+                                                    image={piece.image}
+                                                    caption={piece.caption}
+                                                    year={piece.year}
+                                                    category={piece.category}
+                                                    order={piece.order}
+                                                    notes={piece.notes}
+                                                />
+                                            }
+                                        />
+                                        <OpenModalButton
+                                            className='withdrawbutton'
+                                            buttonText="Delete Post"
+                                            modalComponent={
+                                                <DeleteArtModal
+                                                    id={piece.id}
+                                                />
+                                            }
+                                        />
+                                    </div>
+                                </div>
+                            )
+                        }
+                    }
+                    side++;
+
+                    if(piece.category === 'abstract') {
                         return (
                             <div className={side % 2 !== 0 ? 'artBlock left' : 'artBlock right'}>
                                 <img className={side % 2 !== 0 ? 'artImage leftImage' : 'artImage rightImage'} src={piece.image}></img>
                                 <h3 className={side % 2 !== 0 ? 'artName leftName' : 'artName'}>{piece.name}</h3>
                                 <h4 className={side % 2 !== 0 ? 'artCaption leftName' : 'artCaption'}>{piece.caption}</h4>
                                 <h4 className={side % 2 !== 0 ? 'artCaption leftName' : 'artCaption'}>{piece.year}</h4>
-                                <h4 className={side % 2 !== 0 ? 'artCaption leftName' : 'artCaption'}>Order Weight: {piece.order}</h4>
-                                <div className={side % 2 !== 0 ? 'modalButtonContainer leftName' : 'modalButtonContainer'}>
-
-                                    <OpenModalButton
-                                        className='withdrawbutton'
-                                        buttonText="Edit Post"
-                                        modalComponent={
-                                            <ArtUpdateModal
-                                                id={piece.id}
-                                                name={piece.name}
-                                                image={piece.image}
-                                                caption={piece.caption}
-                                                year={piece.year}
-                                                category={piece.category}
-                                                order={piece.order}
-                                                notes={piece.notes}
-                                            />
-                                        }
-                                    />
-                                    <OpenModalButton
-                                        className='withdrawbutton'
-                                        buttonText="Delete Post"
-                                        modalComponent={
-                                            <DeleteArtModal
-                                                id={piece.id}
-                                            />
-                                        }
-                                    />
-                                </div>
                             </div>
                         )
                     }
-                    side++;
-                    return (
-                        <div className={side % 2 !== 0 ? 'artBlock left' : 'artBlock right'}>
-                            <img className={side % 2 !== 0 ? 'artImage leftImage' : 'artImage rightImage'} src={piece.image}></img>
-                            <h3 className={side % 2 !== 0 ? 'artName leftName' : 'artName'}>{piece.name}</h3>
-                            <h4 className={side % 2 !== 0 ? 'artCaption leftName' : 'artCaption'}>{piece.caption}</h4>
-                            <h4 className={side % 2 !== 0 ? 'artCaption leftName' : 'artCaption'}>{piece.year}</h4>
-                        </div>
-                    )
                 })}
             </div>
         </div>

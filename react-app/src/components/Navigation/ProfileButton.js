@@ -51,19 +51,21 @@ function ProfileButton({ user }) {
             <div>
               <button onClick={handleLogout}>Log Out</button>
             </div>
-            <div><NavLink className='hamburgerLinks' exact to="/">Home</NavLink></div>
-            <div><NavLink className='hamburgerLinks' exact to="/art">Art</NavLink></div>
-            <div><NavLink className='hamburgerLinks' exact to="/games">Game Art</NavLink></div>
-            <div><NavLink className='hamburgerLinks' exact to="/shop">Shop</NavLink></div>
+            <div><NavLink className='hamburgerLinks' exact to="/art">painting + drawing</NavLink></div>
+            <div><NavLink className='hamburgerLinks' exact to="/games">videogame art</NavLink></div>
+            <div><NavLink className='hamburgerLinks' exact to="/vfx">compositing</NavLink></div>
+            <div><NavLink className='hamburgerLinks' exact to="/crochet">crochet</NavLink></div>
+            <div><NavLink className='hamburgerLinks' exact to="/shop">shop + contact</NavLink></div>
             <div><NavLink className='hamburgerLinks' exact to="/artformpage">Post</NavLink></div>
 
           </>
         ) : (
           <>
-            <div><NavLink className='hamburgerLinks' exact to="/">Home</NavLink></div>
-            <div><NavLink className='hamburgerLinks' exact to="/art">Art</NavLink></div>
-            <div><NavLink className='hamburgerLinks' exact to="/games">Game Art</NavLink></div>
-            <div><NavLink className='hamburgerLinks' exact to="/shop">Shop</NavLink></div>
+            <div><NavLink className='hamburgerLinks' exact to="/art">painting + drawing</NavLink></div>
+            <div><NavLink className='hamburgerLinks' exact to="/games">videogame art</NavLink></div>
+            <div><NavLink className='hamburgerLinks' exact to="/vfx">compositing</NavLink></div>
+            <div><NavLink className='hamburgerLinks' exact to="/crochet">crochet</NavLink></div>
+            <div><NavLink className='hamburgerLinks' exact to="/shop">shop + contact</NavLink></div>
             <div><NavLink className='hamburgerLinks' exact to="/login">Login</NavLink></div>
 
             <OpenModalButton

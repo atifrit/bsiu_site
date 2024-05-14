@@ -9,6 +9,8 @@ import LandingPage from "./components/LandingPage";
 import GamesPage from './components/GamesPage';
 import Art from "./components/Art";
 import ArtFormPage from "./components/ArtFormPage";
+import Crochet from "./components/CrochetPage";
+import VFXPage from "./components/VFXPage";
 
 function App() {
   const dispatch = useDispatch();
@@ -38,7 +40,16 @@ function App() {
             <ArtFormPage />
           </Route>
           <Route exact path='/login'>
-          <LoginFormPage />
+            <LoginFormPage />
+          </Route>
+          <Route exact path='/games'>
+            <GamesPage />
+          </Route>
+          <Route exact path='/crochet'>
+            <Crochet />
+          </Route>
+          <Route exact path='/vfx'>
+            <VFXPage />
           </Route>
         </Switch>
       )}

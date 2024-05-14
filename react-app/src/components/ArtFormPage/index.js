@@ -62,7 +62,18 @@ const ArtFormPage = () => {
             setErrors(errorsStrings);
         } else {
             dispatch(getArt());
-            history.push('/art')
+            if(category==='abstract'){
+                history.push('/art')
+            }
+            if(category==='game'){
+                history.push('/games')
+            }
+            if(category==='crochet'){
+                history.push('/crochet')
+            }
+            if(category==='vfx'){
+                history.push('/vfx')
+            }
         }
 
 
@@ -106,12 +117,22 @@ const ArtFormPage = () => {
                 onChange={(e)=> setYear(e.target.value)}
                 ></input>
                 <label htmlFor="category">Category: </label>
-                <input
+                <select className="signupFormInput" name='category' value={category} onChange={(e) => {
+                            setCategory(e.target.value);
+                        }}>
+                            <option value=''>Post Type</option>
+                            <option value='illustrative'>Illustrative</option>
+                            <option value='vfx'>VFX</option>
+                            <option value='game'>Game Art</option>
+                            <option value='abstract'>Abstract</option>
+                            <option value='crochet'>Crochet</option>
+                </select>
+                {/* <input
                 name='category'
                 type='text'
                 value={category}
                 onChange={(e)=> setCategory(e.target.value)}
-                ></input>
+                ></input> */}
                 <label htmlFor="notes">Notes: </label>
                 <textarea
                 name='notes'
@@ -121,7 +142,7 @@ const ArtFormPage = () => {
                 ></textarea>
 
                 <div className="buttonContainer">
-                    <button className="submitButton" type='submit' disabled={!image || category.length < 4}>Post</button>
+                    <button className="submitButton" type='submit' disabled={!image || category.length < 2}>Post</button>
                 </div>
 
             </form>

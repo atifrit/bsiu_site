@@ -9,7 +9,7 @@ import OpenModalButton from "../OpenModalButton";
 import ArtUpdateModal from "../ArtUpdateModal";
 import DeleteArtModal from "../DeleteArtModal";
 
-const GamePage = () => {
+const Crochet = () => {
     const dispatch = useDispatch();
     const history = useHistory();
     const user = useSelector((state) => state.session.user)
@@ -27,7 +27,7 @@ const GamePage = () => {
             <div className='artContainer'>
                 {art.artPieces.map((piece) => {
                     if (user) {
-                        if (piece.category === 'game') {
+                        if (piece.category === 'crochet') {
                             return (
                                 <div className='gamePost'>
                                     <img className='gameImage' src={piece.image}></img>
@@ -68,7 +68,7 @@ const GamePage = () => {
                         }
                     }
 
-                    if (piece.category === 'game') {
+                    if (piece.category === 'crochet') {
                         return (
                             <div className='gamePost'>
                                 <img className='gameImage' src={piece.image}></img>
@@ -84,4 +84,4 @@ const GamePage = () => {
     )
 }
 
-export default GamePage;
+export default Crochet;
