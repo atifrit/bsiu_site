@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { NavLink, useHistory } from 'react-router-dom';
 import { Link, Redirect, useParams } from "react-router-dom/cjs/react-router-dom.min";
 import { getArt } from "../../store/arts";
-
 import '../Art/Art.css';
 import OpenModalButton from "../OpenModalButton";
 import ArtUpdateModal from "../ArtUpdateModal";
