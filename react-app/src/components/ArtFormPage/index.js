@@ -11,7 +11,7 @@ const ArtFormPage = () => {
     const user = useSelector((state) => state.session.user);
     const art = useSelector((state) => state.art)
     const [name, setName] = useState("");
-    const [image, setImage] = useState(null);
+    const [image, setImage] = useState('');
     const [caption, setCaption] = useState('');
     const [year, setYear] = useState(0);
     const [category, setCategory] = useState('');
@@ -92,7 +92,6 @@ const ArtFormPage = () => {
                 onChange={async () => {
                     let reader = new FileReader();
                     setImage(await blobToBase64(inputRef.current.files[0]));
-                    console.log(image);
                 }}
                 ></input>
                 <label htmlFor="name">Name: </label>
@@ -133,7 +132,7 @@ const ArtFormPage = () => {
                 value={category}
                 onChange={(e)=> setCategory(e.target.value)}
                 ></input> */}
-                <label htmlFor="notes">Notes: </label>
+                <label htmlFor="notes">Notes (if this is for VFX, copy youtube link here): </label>
                 <textarea
                 name='notes'
                 className='captionText'
@@ -142,7 +141,7 @@ const ArtFormPage = () => {
                 ></textarea>
 
                 <div className="buttonContainer">
-                    <button className="submitButton" type='submit' disabled={!image || category.length < 2}>Post</button>
+                    <button className="submitButton" type='submit' disabled={category.length < 2 || (category === 'vfx' && image) || (category !== 'vfx' && !image)}>Post</button>
                 </div>
 
             </form>
