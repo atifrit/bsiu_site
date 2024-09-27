@@ -3,11 +3,27 @@ import { useDispatch, useSelector } from "react-redux";
 import { NavLink, useHistory } from 'react-router-dom';
 import { Link, Redirect, useParams } from "react-router-dom/cjs/react-router-dom.min";
 import { getArt } from "../../store/arts";
+import YouTube from 'react-youtube-embed';
 
 import '../Art/Art.css';
 import OpenModalButton from "../OpenModalButton";
 import ArtUpdateModal from "../ArtUpdateModal";
 import DeleteArtModal from "../DeleteArtModal";
+
+function getYoutubeId(str) {
+    let bool = true;
+    let arr = [];
+
+    for (let i = str.length-1; i >= 0; i--) {
+        if(str[i] === '=') bool = false;
+
+        if (bool) {
+            arr.unshift(str[i])
+        }
+    }
+
+    return arr.join('');
+}
 
 const VFXPage = () => {
     const dispatch = useDispatch();
@@ -30,7 +46,8 @@ const VFXPage = () => {
                         if (piece.category === 'vfx') {
                             return (
                                 <div className='gamePost'>
-                                    <img className='gameImage' src={piece.image}></img>
+                                    <YouTube id={getYoutubeId(piece.notes)}></YouTube>
+                                    {/* <img className='gameImage' src={piece.image}></img> */}
                                     <h3 className='gameName'>{piece.name}</h3>
                                     <h4 className='gameCaption'>{piece.caption}</h4>
                                     <h4 className='gameCaption'>{piece.year}</h4>
@@ -44,7 +61,7 @@ const VFXPage = () => {
                                                 <ArtUpdateModal
                                                     id={piece.id}
                                                     name={piece.name}
-                                                    image={piece.image}
+                                                    // image={piece.image}
                                                     caption={piece.caption}
                                                     year={piece.year}
                                                     category={piece.category}
@@ -71,7 +88,8 @@ const VFXPage = () => {
                     if (piece.category === 'vfx') {
                         return (
                             <div className='gamePost'>
-                                <img className='gameImage' src={piece.image}></img>
+                                <YouTube id={getYoutubeId(piece.notes)}></YouTube>
+                                {/* <img className='gameImage' src={piece.image}></img> */}
                                 <h3 className='gameName'>{piece.name}</h3>
                                 <h4 className='gameCaption'>{piece.caption}</h4>
                                 <h4 className='gameCaption'>{piece.year}</h4>

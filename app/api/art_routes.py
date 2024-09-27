@@ -82,6 +82,9 @@ def update_art(art_id):
         art.order=artForm.data['order']
         art.notes=artForm.data['notes']
 
+        if art.image is None:
+            art.image=''
+
         db.session.commit()
 
         return jsonify({'message': 'update successful'}), 201
